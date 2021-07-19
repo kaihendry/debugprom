@@ -1,8 +1,8 @@
-# HELP vpc_vpcs
-# TYPE vpc_vpcs gauge
-vpc_vpcs{region="us-east-1",type="limit"} 5.0
-vpc_vpcs{region="us-east-1",type="current"} 6.0
-# HELP vpc_virtual_private_gateways
-# TYPE vpc_virtual_private_gateways gauge
-vpc_virtual_private_gateways{region="us-east-1",type="limit"} 5.0
-vpc_virtual_private_gateways{region="us-east-1",type="current"} 0.0
+# HELP vpc_vpcs_limit
+# TYPE vpc_vpcs_limit gauge
+vpc_limit{region="us-east-1",type="vpcs"} 5.0
+vpc_limit{region="us-east-1",type="vpcs-gateway"} 5.0
+# HELP vpc_vpcs_current
+# TYPE vpc_vpcs_current gauge
+vpc_current{region="us-east-1",type="vpcs"} 6.0
+vpc_current{region="us-east-1",type="vpcs-gateway"} 0.0
