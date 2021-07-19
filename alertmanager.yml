@@ -1,0 +1,8 @@
+receivers:
+    - name: webhook
+      webhook_configs:
+          - url: http://sink:8000/
+            send_resolved: true
+
+route:
+    receiver: webhook

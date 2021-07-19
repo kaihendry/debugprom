@@ -1,0 +1,4 @@
+# HELP vpc_virtual_private_gateways 
+# TYPE vpc_virtual_private_gateways gauge
+vpc_virtual_private_gateways{region="us-east-1",type="limit"} 5.0
+vpc_virtual_private_gateways{region="us-east-1",type="current"} 0.0

@@ -1,0 +1,6 @@
+groups:
+  - name: /working/alert.rules
+    rules:
+      - alert: downage
+        expr: up == 0
+        for: 1h

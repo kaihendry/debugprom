@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  prometheus:
+    image: prom/prometheus
+    command: ['--config.file=/prom/prometheus.yml']
+    ports: ['9090:9090']
+    volumes:
+      - ./prometheus:/prom/
+
+  alertmanager:
+    image: prom/alertmanager
+    command: ['--config.file=/alertmanager.yml']
+    ports: ['9093:9093']
+    volumes: ['./alertmanager.yml:/alertmanager.yml']
+
+  sink:
+    image: atomic77/reqsink:latest
+    ports: ['8000:8000']
+
+  node-exporter:
+    image: prom/node-exporter
+    ports: ['9100:9100']
+    volumes:
+      - ./exportme/:/exportme/
+    command:
+      - "--collector.disable-defaults"
+      - "--collector.textfile"
+      - "--collector.textfile.directory=/exportme/"
