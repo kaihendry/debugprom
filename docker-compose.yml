@@ -5,8 +5,7 @@ services:
     image: prom/prometheus
     command: ['--config.file=/prom/prometheus.yml']
     ports: ['9090:9090']
-    volumes:
-      - ./prometheus:/prom/
+    volumes: ['./prometheus:/prom/']
 
   alertmanager:
     image: prom/alertmanager
@@ -21,8 +20,7 @@ services:
   node-exporter:
     image: prom/node-exporter
     ports: ['9100:9100']
-    volumes:
-      - ./exportme/:/exportme/
+    volumes: ['./exportme/:/exportme/']
     command:
       - "--collector.disable-defaults"
       - "--collector.textfile"
