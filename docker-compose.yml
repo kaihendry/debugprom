@@ -14,7 +14,7 @@ services:
     volumes: ['./alertmanager.yml:/alertmanager.yml']
 
   sink:
-    image: atomic77/reqsink:latest
+    image: atomic77/reqsink
     ports: ['8000:8000']
 
   node-exporter:

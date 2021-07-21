@@ -1,8 +1,8 @@
-# HELP vpc_vpcs_limit
-# TYPE vpc_vpcs_limit gauge
-vpc_limit{region="us-east-1",type="vpcs"} 5.0
-vpc_limit{region="us-east-1",type="vpcs-gateway"} 5.0
-# HELP vpc_vpcs_current
-# TYPE vpc_vpcs_current gauge
-vpc_current{region="us-east-1",type="vpcs"} 6.0
-vpc_current{region="us-east-1",type="vpcs-gateway"} 0.0
+# HELP aws_limit Usage limit once hit requires an AWS support request
+# TYPE aws_limit gauge
+aws_limit{region="us-east-1",type="vpcs"} 5
+aws_limit{region="us-east-1",type="vpcs-gateway"} 5
+# HELP aws_current Current usage level
+# TYPE aws_current gauge
+aws_current{region="us-east-1",type="vpcs"} 6
+aws_current{region="us-east-1",type="vpcs-gateway"} 0
