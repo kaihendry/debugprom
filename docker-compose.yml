@@ -25,3 +25,10 @@ services:
       - "--collector.disable-defaults" # try keep noise down
       - "--collector.textfile"
       - "--collector.textfile.directory=/exportme/"
+
+  grafana: # https://grafana.com/docs/installation/docker/#configuration
+    image: grafana/grafana
+    ports: ["3000:3000"]
+    volumes: ['./grafana:/etc/grafana/provisioning/']
+    environment: # user/pass admin/letmein
+      GF_SECURITY_ADMIN_PASSWORD: letmein

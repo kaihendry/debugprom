@@ -2,3 +2,4 @@
 * Node exporter with textfile collector http://localhost:9100/metrics
 * Request sink http://localhost:8000/admin
 * Alert manager http://localhost:9093/
+* Grafana http://localhost:3000/
