@@ -4,3 +4,6 @@ groups:
       - alert: downage
         expr: up == 0
         for: 1h
+      - alert: awslimit
+        expr: aws_current > aws_limit
+        for: 1m

@@ -1,7 +1,4 @@
-```promql
-vpc_current > vpc_limit
-```
-
-```
-vpc_current{instance="node-exporter:9100", job="node-exporter", region="us-east-1", type="vpcs"} 6
-```
+* Prometheus http://localhost:9090
+* Node exporter with textfile collector http://localhost:9100/metrics
+* Request sink http://localhost:8000/admin
+* Alert manager http://localhost:9093/

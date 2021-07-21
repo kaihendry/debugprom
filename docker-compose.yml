@@ -22,6 +22,6 @@ services:
     ports: ['9100:9100']
     volumes: ['./exportme/:/exportme/']
     command:
-      - "--collector.disable-defaults"
+      - "--collector.disable-defaults" # try keep noise down
       - "--collector.textfile"
       - "--collector.textfile.directory=/exportme/"
