@@ -9,7 +9,7 @@ local exceededLimit = graphPanel.new(
 ).addTargets([
   prometheus.target(
     |||
-      aws_current >= aws_limit
+      aws_current / aws_limit * 100
     |||,
     legendFormat='{{ type }}'
   ),
@@ -20,7 +20,12 @@ dashboard.new(
   uid='limits-dashboard',
   tags=['aws'],
   editable=true,
-  time_from='now-1h'
+  time_from='now-5m'
 ).addPanel(
-  exceededLimit, {},
+  exceededLimit, gridPos={
+    h: 10,
+    w: 24,
+    x: 0,
+    y: 0,
+   } ,
 )

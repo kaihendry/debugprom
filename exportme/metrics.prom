@@ -5,4 +5,4 @@ aws_limit{region="us-east-1",type="vpcs-gateway"} 5
 # HELP aws_current Current usage level
 # TYPE aws_current gauge
 aws_current{region="us-east-1",type="vpcs"} 6
-aws_current{region="us-east-1",type="vpcs-gateway"} 0
+aws_current{region="us-east-1",type="vpcs-gateway"} 3
