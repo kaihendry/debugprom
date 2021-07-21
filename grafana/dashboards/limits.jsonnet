@@ -15,6 +15,20 @@ local exceededLimit = graphPanel.new(
   ),
 ]);
 
+// https://www.robustperception.io/reduce-noise-from-disk-space-alerts
+// TODO: 100% threshold
+local predictedExceed = graphPanel.new(
+  'Predicted to be over the limit in four hours',
+).addTargets([
+  prometheus.target(
+    |||
+      predict_linear(aws_current[5m], 4 * 3600) / aws_limit * 100
+    |||,
+    legendFormat='{{ type }}'
+  ),
+]);
+
+
 dashboard.new(
   'AWS Limits',
   uid='limits-dashboard',
@@ -27,5 +41,12 @@ dashboard.new(
     w: 24,
     x: 0,
     y: 0,
-   } ,
+  },
+).addPanel(
+  predictedExceed, gridPos={
+    h: 10,
+    w: 24,
+    x: 0,
+    y: 10,
+  },
 )
